@@ -46,15 +46,6 @@ const displayLevelWord = (words) => {
         
 
 
-//     {
-//     "id": 82,
-//     "level": 1,
-//     "word": "Car",
-//     "meaning": "গাড়ি",
-//     "pronunciation": "কার"
-// }
-
-
 // Nicher code gula word gula ke card akare dekhate use kra hoise //
     words.forEach((word) => {
         console.log(word);
