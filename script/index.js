@@ -85,7 +85,7 @@ const displayWordDetails = (word) => {
         </div>
         </div>
                 <div class="mt-4 text-right">
-                    <button id="details-close" class="btn text-white bg-[#ff3030] hover:bg-[#d20000]">Close</button>
+                    <button type="button" id="details-close" class="btn text-white bg-[#ff3030] hover:bg-[#d20000]">Close</button>
                 </div>
         `;
     document.getElementById("word_modal").showModal();
@@ -117,10 +117,10 @@ const displayLevelWord = (words) => {
     <h2 class="font-bold text-2xl">${word.word ? word.word :"(Word Not Found)"}</h2>
     <p class="font-semibold">${word.meaning ? word.meaning : "(Meaning Not Found)"}</p>
     <div class="text-2xl font-medium font-bangla">${word.pronunciation ? word.pronunciation : "(Pronounciation Not Found)"}</div>
-    <div class="flex justify-between items-center">
-      <button onClick="loadWordDetail(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-circle-info"></i></button>
-      <button onClick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50]"><i class="fa-solid fa-volume-high"></i></button>
-    </div>
+        <div class="flex justify-between items-center">
+            <button type="button" onClick="loadWordDetail(${word.id})" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50] p-3 touch-manipulation"><i class="fa-solid fa-circle-info"></i></button>
+            <button type="button" onClick="pronounceWord('${word.word}')" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF50] p-3 touch-manipulation"><i class="fa-solid fa-volume-high"></i></button>
+        </div>
   </div>  
         `;
         wordContainer.append(card);
@@ -141,9 +141,9 @@ const displayLesson = (lessons) => {
 
         const btnDiv = document.createElement("div");
         btnDiv.innerHTML=`
-            <button id="lesson-btn-${lesson.level_no}" 
+            <button type="button" id="lesson-btn-${lesson.level_no}" 
             onClick="loadLevelWord(${lesson.level_no})" 
-            class="btn btn-outline btn-primary lesson-btn">
+            class="btn btn-outline btn-primary lesson-btn w-full sm:w-auto py-3 sm:py-2">
             <i class="fa-solid fa-book-open"></i> Lesson - ${lesson.level_no}
             </button>
         `;
